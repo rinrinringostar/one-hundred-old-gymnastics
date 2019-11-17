@@ -17,8 +17,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// UserController(ユーザー)
 Route::get('/users', 'UserController@index')->name('users');
 Route::get('/users/stamp', 'UserController@userStamp')->name('userStamp');
 
+// LeaderController(グループユーザー。管理者)
+Route::get('/groups', 'LeaderController@index')->name('index');
+Route::get('/groups/create', 'LeaderController@create')->name('create');
+Route::get('/groups/showQr', 'LeaderController@showQr')->name('showQr');
+Route::get('/groups/stampPush', 'LeaderController@stampPush')->name('stampPush');
 
+// LaravelのAuthで使うController
 Route::get('/home', 'HomeController@index')->name('home');
