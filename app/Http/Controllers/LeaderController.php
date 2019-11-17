@@ -13,7 +13,7 @@ class LeaderController extends Controller
      */
     public function index()
     {
-        //
+        return view('stamp');
     }
 
     /**
