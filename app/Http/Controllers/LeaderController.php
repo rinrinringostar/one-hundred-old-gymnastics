@@ -13,7 +13,7 @@ class LeaderController extends Controller
      */
     public function index()
     {
-        return view('stamp');
+        return view('memberList');
     }
 
     /**
@@ -23,7 +23,17 @@ class LeaderController extends Controller
      */
     public function create()
     {
-        //
+        return view('membrerRegistration');
+    }
+
+    public function showQr()
+    {
+        return view('qrcodeDisplay');
+    }
+
+    public function stampPush()
+    {
+        return view('stampPush');
     }
 
     /**

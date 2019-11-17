@@ -13,7 +13,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('ranking');
+    }
+
+    public function userStamp()
+    {
+        return view('stamp');
     }
 
     /**
