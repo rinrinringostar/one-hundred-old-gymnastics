@@ -18,10 +18,21 @@
     <title>スタンプカード</title>
   </head>
   <body>
-    <header class="sticky-top">          
+    <header class="sticky-top">
         <div>
             <p>100歳体操スタンプカード</p>
         </div>
+                                            <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
     </header>
     <div class="container">
         <div class="float-right">
@@ -56,24 +67,24 @@
                     <th>　</th>
                     <th>　</th>
                     <th>　</th>
-                </tr> 
+                </tr>
                 <tr>
                     <th>　</th>
                     <th>　</th>
                     <th>　</th>
                     <th>　</th>
                     <th>　</th>
-                </tr>   
+                </tr>
                 <tr>
                     <th>　</th>
                     <th>　</th>
                     <th>　</th>
                     <th>　</th>
                     <th>　</th>
-                </tr>    
+                </tr>
             </table>
             </div>
-            
+
         </main>
     </div>
     <footer class="fixed-bottom">
@@ -92,7 +103,7 @@
               </div>
     </footer>
 
-    
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
