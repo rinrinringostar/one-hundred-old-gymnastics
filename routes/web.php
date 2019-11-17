@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/index', 'LeaderController@index')->name('index');
+Route::get('/users', 'UserController@index')->name('users');
+Route::get('/users/stamp', 'UserController@userStamp')->name('userStamp');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
