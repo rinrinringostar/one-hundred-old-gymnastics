@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class nickNameUser extends Model
 {
-    protected $table = 'nickNameUsers';
+    protected $table = 'nicknameUsers';
 
     protected $fillable = [
         'name', 'stampDay', 'groupName',

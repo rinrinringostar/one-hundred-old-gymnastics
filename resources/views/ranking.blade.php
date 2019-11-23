@@ -42,16 +42,11 @@
             <p>ランキングの表</p>
             <div>
                 <ul class="list-group">
-                    <li class="list-group-item">Item #1</li>
-                    <li class="list-group-item">Item #2</li>
-                    <li class="list-group-item">Item #3</li>
-                    <li class="list-group-item">Item #4</li>
-                    <li class="list-group-item">Item #5</li>
-                    <li class="list-group-item">Item #6</li>
-
+                  @foreach ($users as $user)
+                    <li class="list-group-item">{{ $user->name }}</li>
+                  @endforeach
                   </ul>
                 </div>
-
         </main>
     </div>
     <footer class="fixed-bottom">

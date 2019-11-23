@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\nickNameUser;
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,7 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('ranking');
+        $users = \App\nickNameUser::all();
+
+        return view('ranking', compact('users'));
     }
 
     public function userStamp()
