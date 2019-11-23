@@ -56,8 +56,8 @@
                     <div class="col"> <button type="button" class="btn btn-dark rounded-pill footer_btn_space">　　　　</button></div>
                 </div>
                 <div class="row align-items-end">
-                  <div class="col"><p><font size="2">カード</font></p></div>
-                  <div class="col"><p><font size="2"><a href="{{ route('userStamp') }}">ランキング</a></font></p></div>
+                  <div class="col"><p><font size="2"><a href="{{ route('userStamp') }}">カード</a></font></p></div>
+                  <div class="col"><p><font size="2"><a href="{{ route('users') }}">ランキング</a></font></p></div>
                 </div>
               </div>
     </footer>
