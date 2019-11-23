@@ -57,7 +57,7 @@
                 </div>
                 <div class="row align-items-end">
                   <div class="col"><p><font size="2">カード</font></p></div>
-                  <div class="col"><p><font size="2">ランキング</font></p></div>
+                  <div class="col"><p><font size="2"><a href="{{ route('userStamp') }}">ランキング</a></font></p></div>
                 </div>
               </div>
     </footer>
