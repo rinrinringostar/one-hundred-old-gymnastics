@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!--css-->
-    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}">
 
     <style>
     th{text-align: center; }
@@ -18,7 +18,7 @@
     <title>QRコード表示</title>
   </head>
   <body>
-    <header class="sticky-top">          
+    <header class="sticky-top">
         <div>
             <p>100歳体操スタンプカード</p>
         </div>
@@ -49,7 +49,7 @@
       -->
     </footer>
 
-    
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

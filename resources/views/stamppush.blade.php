@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!--css-->
-    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}">
 
     <style>
     th{text-align: center; }
@@ -18,7 +18,7 @@
     <title>スタンプ捺印</title>
   </head>
   <body>
-    <header class="sticky-top">          
+    <header class="sticky-top">
         <div>
             <p>100歳体操スタンプカード</p>
         </div>
@@ -36,7 +36,7 @@
                   <a href="#" class="list-group-item list-group-item-action">List #4</a>
                   <a href="#" class="list-group-item list-group-item-action">List #5</a>
                   <a href="#" class="list-group-item list-group-item-action">List #6</a>
-  
+
                 </div>
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -56,7 +56,7 @@
                     </div>
           </main>
         <div class="col-12">
-            <div class="float-right"> 
+            <div class="float-right">
               <button>スタンプを押す</button>
             </div>
         </div>
@@ -74,7 +74,7 @@
               </div>
     </footer>
 
-    
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
