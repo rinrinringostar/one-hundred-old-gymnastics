@@ -9,44 +9,48 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!--css-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}">
+    <link rel="stylesheet" type="text/css" href="base.css">
 
     <style>
     th{text-align: center; }
     button{widows: 200px; height: 30px;}
     </style>
 
-    <title>新規登録</title>
+    <title>情報変更</title>
   </head>
   <body>
-    <header class="sticky-top">
+    <header class="sticky-top">          
         <div>
             <p>100歳体操スタンプカード</p>
         </div>
     </header>
     <div class="container">
         <div class="text-center">
-            <p><u>メンバー新規登録</u></p>
+            <p><u>メンバー情報変更</u></p>
         </div>
-        <main class="mb-5">
-
-        <form action="{{ url('groups') }}" method="post">
-          {{ csrf_field() }}
-          <div class = "form-group row ">
-            <label for = "text3a" class = " col-sm-2 col-form-label">名前</label>
-            <div class = " col-sm-10 ">
-              <input name="name" type="text" id="text3a" class="form-control" placeholder="新しいメンバーの名前を入力">
+        <main> 
+            <!--現在の名前-->
+            <div><p>現在の名前</p></div>
+            <div  class="border-bottom">〇〇〇</div>
+            <!--新しい名前-->        
+            <form>
+            <div class = "form-group row">
+              <label for = "text3a" class = " col-sm-2 col-form-label">新しい名前</label>
+              <div class = " col-sm-10 ">
+                <input type = "text" id = "text3a" class = "form-control" placeholder="新しい名前を入力">
+              </div>
             </div>
-          </div>
+        </form>
         </main>
         <div class="col-12 clearfix">
-          <div class="float-right">
-            <button><a href="javascript:history.back()">キャンセル</a></button>
-            <button type="submit" name="submit" class="btn btn-primary">登録</button>
+          <div class="float-right"> 
+            <button>キャンセル</button>
+            <button>　 登録 　</button>
           </div>
         </div>
-        </form>
     </div>
+
+
     <footer class="fixed-bottom">
         <div class="container-fluid">
                 <div class="row align-items-start">
@@ -60,7 +64,7 @@
               </div>
     </footer>
 
-
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
