@@ -30,22 +30,22 @@
         </div>
         <main class="mb-5">
 
-          <form>
+        <form action="{{ url('groups') }}" method="post">
+          {{ csrf_field() }}
           <div class = "form-group row ">
             <label for = "text3a" class = " col-sm-2 col-form-label">名前</label>
             <div class = " col-sm-10 ">
-              <input type = "text" id = "text3a" class = "form-control" placeholder="新しいメンバーの名前を入力">
+              <input name="name" type="text" id="text3a" class="form-control" placeholder="新しいメンバーの名前を入力">
             </div>
           </div>
-
-        </form>
         </main>
         <div class="col-12 clearfix">
           <div class="float-right">
             <button>キャンセル</button>
-            <button>登録</button>
+            <button type="submit" name="submit" class="btn btn-primary">登録</button>
           </div>
         </div>
+        </form>
     </div>
     <footer class="fixed-bottom">
         <div class="container-fluid">

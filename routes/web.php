@@ -27,5 +27,7 @@ Route::get('/groups/create', 'LeaderController@create')->name('create');
 Route::get('/groups/showQr', 'LeaderController@showQr')->name('showQr');
 Route::get('/groups/stampPush', 'LeaderController@stampPush')->name('stampPush');
 
+// 新規作成
+Route::post('groups', 'LeaderController@store')->name('store');
 // LaravelのAuthで使うController
 Route::get('/home', 'HomeController@index')->name('home');
