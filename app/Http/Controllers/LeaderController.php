@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\nickNameUser;
 use Illuminate\Http\Request;
 
 class LeaderController extends Controller
@@ -44,7 +45,10 @@ class LeaderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nickNameUser = new nickNameUser;
+        $nickNameUser->fill($request->all());
+        $nickNameUser->save();
+        return redirect('/groups');
     }
 
     /**
