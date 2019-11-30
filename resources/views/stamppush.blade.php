@@ -68,8 +68,8 @@
                   <div class="col"> <button type="button" class="btn btn-dark rounded-pill footer_btn_space">　　　　</button></div>
                 </div>
                 <div class="row align-items-end">
-                  <div class="col"><p><font size="2">一覧</font></p></div>
-                  <div class="col"><p><font size="2">スタンプ</font></p></div>
+                  <div class="col"><p><font size="2"><a href="{{ route('index') }}">一覧</a></font></p></div>
+                  <div class="col"><p><font size="2"><a href="{{ route('stampPush') }}">スタンプ</a></font></p></div>
                 </div>
               </div>
     </footer>
