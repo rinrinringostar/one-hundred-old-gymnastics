@@ -37,7 +37,8 @@ class LeaderController extends Controller
 
     public function stampPush()
     {
-        return view('stampPush');
+        $nickNameUsers = nickNameUser::all();
+        return view('stampPush', compact('nickNameUsers'));
     }
 
     /**

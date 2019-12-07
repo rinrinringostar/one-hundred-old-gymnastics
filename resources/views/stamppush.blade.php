@@ -41,22 +41,13 @@
             </div>
             <!--メンバー一覧・選択-->
             <div class="container">
-                <div class="row border py-2 text-center d-flex align-items-center">
-                    <div class="col-2"><img src="ブタ_カラー1.png" width="40" ></div>
-                    <div class="col-8">〇〇〇</div>
-                    <div class="col-2"><input type="checkbox"></div>
-                </div>
-                <!--以下、繰り返し-->
-                <div class="row border py-2 text-center d-flex align-items-center">
-                    <div class="col-2"><img src="ブタ_カラー2.png" width="40" ></div>
-                    <div class="col-8">〇〇〇</div>
-                    <div class="col-2"><input type="checkbox"></div>
-                </div>
-                <div class="row border py-2 text-center d-flex align-items-center">
-                    <div class="col-2"><img src="ブタ_カラー3.png" width="40" ></div>
-                    <div class="col-8">〇〇〇</div>
-                    <div class="col-2"><input type="checkbox"></div>
-                </div>
+                @foreach ($nickNameUsers as $nickNameUser)
+                    <div class="row border py-2 text-center d-flex align-items-center">
+                        <div class="col-2"><img src="ブタ_カラー3.png" width="40" ></div>
+                        <div class="col-8"><a href="{{ url('groups/'.$nickNameUser->id.'/edit') }}">{{ $nickNameUser->name }}</a></div>
+                        <div class="col-2"><input type="checkbox"></div>
+                    </div>
+                @endforeach
             </div>
             <!--行間のためのライン-->
             <div>

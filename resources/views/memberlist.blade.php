@@ -38,30 +38,15 @@
             <!--メンバーリスト-->
             <div class="container">
                 <div class="row">
-                    <button type="button" style="height: 60px;" class="btn btn-outline-secondary btn-block text-dark d-inline-block page-link">
-                            <span class="px-1"><img src="ブタ_カラー1.png" width="40" ></span>
-                            <span class="px-3">〇〇〇〇</span>
-                            <span class="px-3">〇〇回</span>
-                    </button>
+                    @foreach ($nickNameUsers as $nickNameUser)
+                        <button onclick="location.href='{{ url('groups/'.$nickNameUser->id.'/showQr') }}'" type="button" style="height: 80px;" class="btn btn-outline-secondary btn-block text-dark d-inline-block page-link text-center d-flex align-items-center">
+                            <div class="col-2"><img src="ブタ_カラー3.png" width="40" ></div>
+                            <div class="col-8">{{ $nickNameUser->name }}</div>
+                            <div class="col-2">〇〇回</div>
+                        </button>
+                    @endforeach
                 </div>
-                <div class="row">
-                    <button type="button" style="height: 60px;" class="btn btn-outline-secondary btn-block text-dark d-inline-block page-link">
-                        <span class="px-1"><img src="ブタ_カラー2.png" width="40" ></span>
-                        <span class="px-3">〇〇〇〇</span>
-                        <span class="px-3">〇〇回</span>
-                    </button>
-                    </div>
-                    <div class="row">
-                    <button type="button" style="height: 60px;" class="btn btn-outline-secondary btn-block text-dark d-inline-block page-link">
-                        <span class="px-1"><img src="ブタ_カラー3.png" width="40" ></span>
-                        <span class="px-3">〇〇〇〇</span>
-                        <span class="px-3">〇〇回</span>
-                    </button>
-                    </div>
-                </div>
-                @foreach ($nickNameUsers as $nickNameUser)
-                    <a href="{{ url('groups/'.$nickNameUser->id.'/showQr') }}" class="list-group-item list-group-item-action">{{ $nickNameUser->name }}</a>
-                @endforeach
+            </div>
           </main>
     </div>
     <footer class="fixed-bottom">
