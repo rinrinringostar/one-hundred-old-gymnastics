@@ -72,8 +72,8 @@ class LeaderController extends Controller
      */
     public function edit(Request $request)
     {
-        $user = nickNameUser::find($request->id);
-        return view('memberEdit', compact('user'));
+        $nickNameUser = nickNameUser::find($request->id);
+        return view('memberEdit', compact('nickNameUser'));
     }
 
     /**
@@ -85,7 +85,10 @@ class LeaderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nickNameUser = nickNameUser::find($request->id);
+        $nickNameUser->fill($request->all());
+        $nickNameUser->save();
+        return redirect('/groups');
     }
 
     /**

@@ -30,24 +30,25 @@
         </div>
         <main>
             <!--現在の名前-->
-            <div><p>{{ $user->name }}</p></div>
+            <div><p>{{ $nickNameUser->name }}</p></div>
             <div  class="border-bottom">〇〇〇</div>
             <!--新しい名前-->
-            <form>
-            <div class = "form-group row">
-              <label for = "text3a" class = " col-sm-2 col-form-label">新しい名前</label>
-              <div class = " col-sm-10 ">
-                <input type = "text" id = "text3a" class = "form-control" placeholder="新しい名前を入力">
+            <form action="{{ url('groups/'.$nickNameUser->id.'/edit') }}" method="post">
+              {{ csrf_field() }}
+              <div class = "form-group row">
+                <label for="text3a" class = "col-sm-2 col-form-label">新しい名前</label>
+                <div class="col-sm-10 ">
+                  <input name="name" type="text" id="text3a" class="form-control" placeholder="新しい名前を入力" required>
+                </div>
               </div>
-            </div>
-        </form>
+              <div class="col-12 clearfix">
+                <div class="float-right">
+                  <button><a href="javascript:history.back()">キャンセル</a></button>
+                  <button type="submit" name="submit" class="btn btn-primary">登録</button>
+                </div>
+              </div>
+            </form>
         </main>
-        <div class="col-12 clearfix">
-          <div class="float-right">
-            <button>キャンセル</button>
-            <button>　 登録 　</button>
-          </div>
-        </div>
     </div>
 
 
@@ -58,8 +59,8 @@
                   <div class="col"> <button type="button" class="btn btn-outline-dark rounded-pill footer_btn_space">　　　　</button></div>
                 </div>
                 <div class="row align-items-end">
-                  <div class="col"><p><font size="2">一覧</font></p></div>
-                  <div class="col"><p><font size="2">スタンプ</font></p></div>
+                  <div class="col"><p><font size="2"><a href="{{ route('index') }}">一覧</a></font></p></div>
+                  <div class="col"><p><font size="2"><a href="{{ route('stampPush') }}">スタンプ</a></font></p></div>
                 </div>
               </div>
     </footer>
