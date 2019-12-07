@@ -1,42 +1,68 @@
 <!doctype html>
 <html lang="ja">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!--css-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}">
+      <!--css-->
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}">
 
-    <style>
-    th{text-align: center; }
-    </style>
+      <style>
+      th{text-align: center; }
+      </style>
 
-    <title>一覧</title>
+      <title>一覧</title>
   </head>
   <body>
-    <header class="sticky-top">
-        <div>
-            <p>100歳体操スタンプカード</p>
-        </div>
-    </header>
+      <header class="sticky-top">
+          <div>
+              <p>100歳体操スタンプカード</p>
+          </div>
+      </header>
     <div class="container">
         <div class="text-center">
             <p><u>グループメンバー</u></p>
         </div>
-        <main class="mb-5">
-            <div class="list-group">
-              <!--アイコン＋名前＋回数＋”回”-->
-                <a href="#" class="list-group-item list-group-item-action">☺<spam>名前</spam><span>〇〇</span><span>回</span></a>
+        <main>
+            <!--新しいメンバーを追加-->
+            <div class="container mb-3  text-center">
+                <div class="row">
+                    <div class="col-9 border border-right-0 rounded-left">新しいメンバーを追加</div>
+                      <button type="button" class="col-3 rounded-right btn btn-default btn-sm btn-dark border-left">＋</button>
+                </div>
+            </div>
+            <!--メンバーリスト-->
+            <div class="container">
+                <div class="row">
+                    <button type="button" style="height: 60px;" class="btn btn-outline-secondary btn-block text-dark d-inline-block page-link">
+                            <span class="px-1"><img src="ブタ_カラー1.png" width="40" ></span>
+                            <span class="px-3">〇〇〇〇</span>
+                            <span class="px-3">〇〇回</span>
+                    </button>
+                </div>
+                <div class="row">
+                    <button type="button" style="height: 60px;" class="btn btn-outline-secondary btn-block text-dark d-inline-block page-link">
+                        <span class="px-1"><img src="ブタ_カラー2.png" width="40" ></span>
+                        <span class="px-3">〇〇〇〇</span>
+                        <span class="px-3">〇〇回</span>
+                    </button>
+                    </div>
+                    <div class="row">
+                    <button type="button" style="height: 60px;" class="btn btn-outline-secondary btn-block text-dark d-inline-block page-link">
+                        <span class="px-1"><img src="ブタ_カラー3.png" width="40" ></span>
+                        <span class="px-3">〇〇〇〇</span>
+                        <span class="px-3">〇〇回</span>
+                    </button>
+                    </div>
+                </div>
                 @foreach ($nickNameUsers as $nickNameUser)
                     <a href="#" class="list-group-item list-group-item-action">{{ $nickNameUser->name }}</a>
                 @endforeach
-
-              </div>
-        </main>
+          </main>
     </div>
     <footer class="fixed-bottom">
         <div class="container-fluid">

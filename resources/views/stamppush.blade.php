@@ -28,38 +28,47 @@
             <p><u>スタンプ</u></p>
         </div>
         <main class="mb-5">
-            <div class="list-group">
-                <!--アイコン＋名前＋回数＋”回”-->
-                  <a href="#" class="list-group-item list-group-item-action">☺<spam>名前</spam><span>〇〇</span><span>回</span></a>
-                  <a href="#" class="list-group-item list-group-item-action">List #2</a>
-                  <a href="#" class="list-group-item list-group-item-action">List #3</a>
-                  <a href="#" class="list-group-item list-group-item-action">List #4</a>
-                  <a href="#" class="list-group-item list-group-item-action">List #5</a>
-                  <a href="#" class="list-group-item list-group-item-action">List #6</a>
-
+            <!--日付入力-->
+            <div class="col-12 clearfix">
+                <div class="float-right">
+                    <h7>日付</h7>
+                    <input type="date"></input>
                 </div>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <input type="text" class="form-control" aria-label="...">
-                      <div class="input-group-text">
-                        <input type="checkbox" aria-label="...">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="input-group mb-3">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <input type="checkbox" aria-label="...">
-                        </div>
-                      </div>
-                      <input type="text" class="form-control" aria-label="...">
-                    </div>
-          </main>
-        <div class="col-12">
-            <div class="float-right">
-              <button>スタンプを押す</button>
             </div>
-        </div>
+            <!--行間のためのライン-->
+            <div>
+                <hr>
+            </div>
+            <!--メンバー一覧・選択-->
+            <div class="container">
+                <div class="row border py-2 text-center d-flex align-items-center">
+                    <div class="col-2"><img src="ブタ_カラー1.png" width="40" ></div>
+                    <div class="col-8">〇〇〇</div>
+                    <div class="col-2"><input type="checkbox"></div>
+                </div>
+                <!--以下、繰り返し-->
+                <div class="row border py-2 text-center d-flex align-items-center">
+                    <div class="col-2"><img src="ブタ_カラー2.png" width="40" ></div>
+                    <div class="col-8">〇〇〇</div>
+                    <div class="col-2"><input type="checkbox"></div>
+                </div>
+                <div class="row border py-2 text-center d-flex align-items-center">
+                    <div class="col-2"><img src="ブタ_カラー3.png" width="40" ></div>
+                    <div class="col-8">〇〇〇</div>
+                    <div class="col-2"><input type="checkbox"></div>
+                </div>
+            </div>
+            <!--行間のためのライン-->
+            <div>
+                <hr>
+            </div>
+            <!--ボタン-->
+            <div class="col-12">
+                <div class="col text-center">
+                  <button type="button" class="btn btn-dark rounded-pill">スタンプを押す</button>
+                </div>
+            </div>
+        </main>
     </div>
     <footer class="fixed-bottom">
         <div class="container-fluid">

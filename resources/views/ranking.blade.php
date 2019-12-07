@@ -39,14 +39,29 @@
             <p><u>ランキング</u></p>
         </div>
         <main class="mb-5">
-            <p>ランキングの表</p>
-            <div>
-                <ul class="list-group">
+            <div class="container">
+              <div class="row border py-1 text-center d-flex align-items-center" style="height: 60px;">
+                  <div class="col-2"><img src="グループアイコン1.png" width="50px"></div>
+                  <div class="col-3">1位</div>
+                  <div class="col-7 text-left">〇〇〇〇</div>
+              </div>
+                <!--以下、繰り返し-->
+              <div class="row border py-1 text-center d-flex align-items-center" style="height: 60px;">
+                  <div class="col-2"><img src="グループアイコン2.png" width="50px"></div>
+                  <div class="col-3">2位</div>
+                  <div class="col-7 text-left">〇〇〇〇</div>
+              </div>
+              <div class="row border py-1 text-center d-flex align-items-center" style="height: 60px;">
+                  <div class="col-2"><img src="グループアイコン3.png" width="50px"></div>
+                  <div class="col-3">3位</div>
+                  <div class="col-7 text-left">〇〇〇〇</div>
+              </div>
+                  <ul class="list-group">
                   @foreach ($users as $user)
                     <li class="list-group-item">{{ $user->name }}</li>
                   @endforeach
                   </ul>
-                </div>
+          </div>
         </main>
     </div>
     <footer class="fixed-bottom">
