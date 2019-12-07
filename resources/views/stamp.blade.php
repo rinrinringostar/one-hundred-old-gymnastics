@@ -42,11 +42,11 @@
                       <tbody>
                         <tr>
                             <th class="text-right">チーム名：</th>
-                            <td class="text-left">team</td>
+                            <td class="text-left">{{ $nickNameUser->groupName }}</td>
                         </tr>
                         <tr>
                             <th class="text-right">名前：</th>
-                            <td class="text-left">name</td>
+                            <td class="text-left">{{  $nickNameUser->name }}</td>
                         </tr>
                         <tr>
                             <th class="text-right">参加回数：</th>
@@ -89,7 +89,7 @@
                   <div class="col"> <button type="button" class="btn btn-outline-dark rounded-pill footer_btn_space" onclick="ranking.html">　　　　</button></div>
                 </div>
                 <div class="row align-items-end">
-                  <div class="col"><p><font size="2"><a href="{{ route('userStamp') }}">カード</a></font></p></div>
+                  {{-- <div class="col"><p><font size="2"><a href="{{ route('userStamp') }}">カード</a></font></p></div> --}}
                   <div class="col"><p><font size="2"><a href="{{ route('users') }}">ランキング</a></font></p></div>
                 </div>
               </div>

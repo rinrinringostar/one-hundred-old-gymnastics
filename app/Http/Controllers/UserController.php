@@ -15,14 +15,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = \App\nickNameUser::all();
-
-        return view('ranking', compact('users'));
+        $nickNameUsers = nickNameUser::all();
+        return view('ranking', compact('nickNameUsers'));
     }
 
-    public function userStamp()
+    public function userStamp(Request $request, $id)
     {
-        return view('stamp');
+        $nickNameUser = nickNameUser::find($request->id);
+        return view('stamp', compact('nickNameUser'));
     }
 
     /**
