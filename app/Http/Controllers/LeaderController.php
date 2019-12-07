@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\nickNameUser;
+use App\User;
 use Illuminate\Http\Request;
 
 class LeaderController extends Controller
@@ -14,7 +15,8 @@ class LeaderController extends Controller
      */
     public function index()
     {
-        return view('memberList');
+        $nickNameUsers = nickNameUser::all();
+        return view('memberList', compact('nickNameUsers'));
     }
 
     /**

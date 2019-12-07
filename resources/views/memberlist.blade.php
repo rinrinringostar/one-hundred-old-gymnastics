@@ -31,11 +31,9 @@
             <div class="list-group">
               <!--アイコン＋名前＋回数＋”回”-->
                 <a href="#" class="list-group-item list-group-item-action">☺<spam>名前</spam><span>〇〇</span><span>回</span></a>
-                <a href="#" class="list-group-item list-group-item-action">List #2</a>
-                <a href="#" class="list-group-item list-group-item-action">List #3</a>
-                <a href="#" class="list-group-item list-group-item-action">List #4</a>
-                <a href="#" class="list-group-item list-group-item-action">List #5</a>
-                <a href="#" class="list-group-item list-group-item-action">List #6</a>
+                @foreach ($nickNameUsers as $nickNameUser)
+                    <a href="#" class="list-group-item list-group-item-action">{{ $nickNameUser->name }}</a>
+                @endforeach
 
               </div>
         </main>
