@@ -70,9 +70,9 @@ class LeaderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, User $id)
+    public function edit(Request $request)
     {
-        $user = User::find($id);
+        $user = nickNameUser::find($request->id);
         return view('memberEdit', compact('user'));
     }
 
