@@ -29,9 +29,10 @@ class LeaderController extends Controller
         return view('membrerRegistration');
     }
 
-    public function showQr()
+    public function showQr(Request $request)
     {
-        return view('qrcodeDisplay');
+        $nickNameUser = nickNameUser::find($request->id);
+        return view('qrcodeDisplay', compact('nickNameUser'));
     }
 
     public function stampPush()

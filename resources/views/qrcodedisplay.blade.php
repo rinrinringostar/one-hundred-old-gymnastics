@@ -26,17 +26,16 @@
     <main>
       <div class="container">
           <div class="text-center">
+              <!--QRコード-->
+              {{ $nickNameUser->name.'さん' }}
               <p><u>QRコード</u></p>
               <div id="qrcode"></div>
           </div>
           <div class="text-center">
-          <!--QRコード-->
-            <div><img src="はんこ.png" width="100px"></div>
-            <p>削除してQRコードの処理を配置</p>
         </div>
         <div class="col-12 clearfix">
             <div class="float-right">
-              <button>　戻る　</button>
+              <button><a href="javascript:history.back()">戻る</a></button>
             </div>
           </div>
       </div>

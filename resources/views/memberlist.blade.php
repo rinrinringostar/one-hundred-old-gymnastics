@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 @foreach ($nickNameUsers as $nickNameUser)
-                    <a href="{{ url('groups/'.$nickNameUser->id.'/edit') }}" class="list-group-item list-group-item-action">{{ $nickNameUser->name }}</a>
+                    <a href="{{ url('groups/'.$nickNameUser->id.'/showQr') }}" class="list-group-item list-group-item-action">{{ $nickNameUser->name }}</a>
                 @endforeach
           </main>
     </div>
