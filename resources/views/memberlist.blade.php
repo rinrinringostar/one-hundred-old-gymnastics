@@ -32,7 +32,7 @@
             <div class="container mb-3  text-center">
                 <div class="row">
                     <div class="col-9 border border-right-0 rounded-left">新しいメンバーを追加</div>
-                      <button type="button" class="col-3 rounded-right btn btn-default btn-sm btn-dark border-left">＋</button>
+                      <button onclick="location.href='{{ route('create') }}'" type="button" class="col-3 rounded-right btn btn-default btn-sm btn-dark border-left">＋</button>
                 </div>
             </div>
             <!--メンバーリスト-->
