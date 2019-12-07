@@ -26,6 +26,8 @@ Route::get('/groups', 'LeaderController@index')->name('index');
 Route::get('/groups/create', 'LeaderController@create')->name('create');
 Route::get('/groups/showQr', 'LeaderController@showQr')->name('showQr');
 Route::get('/groups/stampPush', 'LeaderController@stampPush')->name('stampPush');
+Route::get('/groups/{id}/edit', 'LeaderController@edit')->name('userEdit');
+
 
 // 新規作成
 Route::post('groups', 'LeaderController@store')->name('store');
