@@ -35,7 +35,7 @@
           <div class = "form-group row ">
             <label for = "text3a" class = " col-sm-2 col-form-label">名前</label>
             <div class = " col-sm-10 ">
-              <input name="name" type="text" id="text3a" class="form-control" placeholder="新しいメンバーの名前を入力">
+              <input name="name" type="text" id="text3a" class="form-control" placeholder="新しいメンバーの名前を入力" required>
             </div>
           </div>
         </main>
