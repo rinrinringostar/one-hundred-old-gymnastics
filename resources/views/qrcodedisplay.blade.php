@@ -23,31 +23,25 @@
             <p>100歳体操スタンプカード</p>
         </div>
     </header>
-    <div class="container">
-        <div class="text-center">
-            <p><u>QRコード</u></p>
+    <main>
+      <div class="container">
+          <div class="text-center">
+              <p><u>QRコード</u></p>
+              <div id="qrcode"></div>
+          </div>
+          <div class="text-center">
+          <!--QRコード-->
+            <div><img src="はんこ.png" width="100px"></div>
+            <p>削除してQRコードの処理を配置</p>
         </div>
-        <main class="mb-5">
-            <p>QRコード</p>
-            <div id="qrcode"></div>
-        </main>
-        <div>
-            <button>戻る</button>
-        </div>
-    </div>
+        <div class="col-12 clearfix">
+            <div class="float-right">
+              <button>　戻る　</button>
+            </div>
+          </div>
+      </div>
+    </main>
     <footer class="fixed-bottom">
-      <!--　フッターボタン不要
-        <div class="container-fluid">
-                <div class="row align-items-start">
-                  <div class="col"> <button type="button" class="btn btn-dark rounded-pill footer_btn_space">　　　　</button></div>
-                  <div class="col"> <button type="button" class="btn btn-outline-dark rounded-pill footer_btn_space">　　　　</button></div>
-                </div>
-                <div class="row align-items-end">
-                  <div class="col"><p><font size="2">一覧</font></p></div>
-                  <div class="col"><p><font size="2">スタンプ</font></p></div>
-                </div>
-              </div>
-      -->
     </footer>
 
 

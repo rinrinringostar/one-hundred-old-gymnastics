@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!--css-->
-    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}">
 
     <style>
     th{text-align: center; }
@@ -19,7 +19,7 @@
     <title>情報変更</title>
   </head>
   <body>
-    <header class="sticky-top">          
+    <header class="sticky-top">
         <div>
             <p>100歳体操スタンプカード</p>
         </div>
@@ -28,11 +28,11 @@
         <div class="text-center">
             <p><u>メンバー情報変更</u></p>
         </div>
-        <main> 
+        <main>
             <!--現在の名前-->
-            <div><p>現在の名前</p></div>
+            <div><p>{{ $user->name }}</p></div>
             <div  class="border-bottom">〇〇〇</div>
-            <!--新しい名前-->        
+            <!--新しい名前-->
             <form>
             <div class = "form-group row">
               <label for = "text3a" class = " col-sm-2 col-form-label">新しい名前</label>
@@ -43,7 +43,7 @@
         </form>
         </main>
         <div class="col-12 clearfix">
-          <div class="float-right"> 
+          <div class="float-right">
             <button>キャンセル</button>
             <button>　 登録 　</button>
           </div>
@@ -64,7 +64,7 @@
               </div>
     </footer>
 
-    
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
