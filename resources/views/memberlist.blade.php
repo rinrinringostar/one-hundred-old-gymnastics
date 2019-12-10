@@ -40,7 +40,7 @@
                 <div class="row">
                     @foreach ($nickNameUsers as $nickNameUser)
                         <button onclick="location.href='{{ url('groups/'.$nickNameUser->id.'/showQr') }}'" type="button" style="height: 80px;" class="btn btn-outline-secondary btn-block text-dark d-inline-block page-link text-center d-flex align-items-center">
-                            <div class="col-2"><img src="ブタ_カラー3.png" width="40" ></div>
+                            <div class="col-2"><img src="{{ asset('storage/ブタカラー.png') }}" width="40" ></div>
                             <div class="col-8">{{ $nickNameUser->name }}</div>
                             <div class="col-2">{{ $nickNameUser->joincount.'回' }}</div>
                         </button>

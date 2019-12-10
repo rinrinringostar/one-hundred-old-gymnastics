@@ -59,7 +59,7 @@
                 <table class="table-bordered table-secondary" style="background-color: transparent;">
                     <tr>
                       <th class="th_1">
-                        <span style="position: relative; top: 12px;"><img src="はんこ.png" width="80"></span>
+                        <span style="position: relative; top: 12px;"><img src="{{ asset('storage/はんこ.png') }}" width="80"></span>
                         <span style="position: relative; bottom: 49px; right: 11px; font-size: 14px; color: red;">11/30</span>
                       </th>
                       <th class="th_1"></th>
