@@ -19,7 +19,7 @@ Auth::routes();
 
 // UserController(ユーザー)
 Route::get('/users', 'UserController@index')->name('users');
-Route::get('/users/stamp', 'UserController@userStamp')->name('userStamp');
+Route::get('/users/{id}/stamp', 'UserController@userStamp')->name('userStamp');
 
 // LeaderController(グループユーザー。管理者)
 Route::get('/groups', 'LeaderController@index')->name('index');

@@ -40,27 +40,13 @@
         </div>
         <main class="mb-5">
             <div class="container">
-              <div class="row border py-1 text-center d-flex align-items-center" style="height: 60px;">
-                  <div class="col-2"><img src="グループアイコン1.png" width="50px"></div>
-                  <div class="col-3">1位</div>
-                  <div class="col-7 text-left">〇〇〇〇</div>
-              </div>
-                <!--以下、繰り返し-->
-              <div class="row border py-1 text-center d-flex align-items-center" style="height: 60px;">
-                  <div class="col-2"><img src="グループアイコン2.png" width="50px"></div>
-                  <div class="col-3">2位</div>
-                  <div class="col-7 text-left">〇〇〇〇</div>
-              </div>
-              <div class="row border py-1 text-center d-flex align-items-center" style="height: 60px;">
+              @foreach ($nickNameUsers as $nickNameUser)
+                <div class="row border py-1 text-center d-flex align-items-center" style="height: 60px;">
                   <div class="col-2"><img src="グループアイコン3.png" width="50px"></div>
-                  <div class="col-3">3位</div>
-                  <div class="col-7 text-left">〇〇〇〇</div>
-              </div>
-                  <ul class="list-group">
-                  @foreach ($users as $user)
-                    <li class="list-group-item">{{ $user->name }}</li>
-                  @endforeach
-                  </ul>
+                  <div class="col-3">1位</div>
+                  <div class="col-7 text-left"><a href="{{ url('users/'.$nickNameUser->id.'/stamp') }}">{{ $nickNameUser->name }}</a></div>
+                </div>
+              @endforeach
           </div>
         </main>
     </div>
@@ -71,7 +57,7 @@
                     <div class="col"> <button type="button" class="btn btn-dark rounded-pill footer_btn_space">　　　　</button></div>
                 </div>
                 <div class="row align-items-end">
-                  <div class="col"><p><font size="2"><a href="{{ route('userStamp') }}">カード</a></font></p></div>
+                  {{-- <div class="col"><p><font size="2"><a href="{{ route('userStamp') }}">カード</a></font></p></div> --}}
                   <div class="col"><p><font size="2"><a href="{{ route('users') }}">ランキング</a></font></p></div>
                 </div>
               </div>
