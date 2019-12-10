@@ -46,11 +46,11 @@
                         </tr>
                         <tr>
                             <th class="text-right">名前：</th>
-                            <td class="text-left">{{  $nickNameUser->name }}</td>
+                            <td class="text-left">{{ $nickNameUser->name }}</td>
                         </tr>
                         <tr>
                             <th class="text-right">参加回数：</th>
-                            <td class="text-left">〇〇<span>回</span></td>
+                            <td class="text-left">{{ $nickNameUser->joincount }}<span>回</span></td>
                         </tr>
                       </tbody>
                     </table>
