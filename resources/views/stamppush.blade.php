@@ -43,7 +43,7 @@
             <div class="container">
                 @foreach ($nickNameUsers as $nickNameUser)
                     <div class="row border py-2 text-center d-flex align-items-center">
-                        <div class="col-2"><img src="ブタ_カラー3.png" width="40" ></div>
+                        <div class="col-2"><img src="{{ asset('storage/ブタカラー.png') }}" width="40" ></div>
                         <div class="col-8"><a href="{{ url('groups/'.$nickNameUser->id.'/edit') }}">{{ $nickNameUser->name }}</a></div>
                         <div class="col-2"><input type="checkbox"></div>
                     </div>
