@@ -27,6 +27,16 @@
         <div class="text-center">
             <p><u>スタンプ</u></p>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <main class="mb-5">
             <!--日付入力-->
             <div class="col-12 clearfix">
@@ -42,10 +52,12 @@
             <!--メンバー一覧・選択-->
             <div class="container">
                 @foreach ($nickNameUsers as $nickNameUser)
+                <form action="{{ url('/groups/stampPush') }}" method="post">
+                    {{ csrf_field() }}
                     <div class="row border py-2 text-center d-flex align-items-center">
                         <div class="col-2"><img src="{{ asset('storage/ブタカラー.png') }}" width="40" ></div>
                         <div class="col-8"><a href="{{ url('groups/'.$nickNameUser->id.'/edit') }}">{{ $nickNameUser->name }}</a></div>
-                        <div class="col-2"><input type="checkbox"></div>
+                        <div class="col-2"><input type="checkbox" name="joincount[]" value="{{ $nickNameUser->id }}"></div>
                     </div>
                 @endforeach
             </div>
@@ -56,9 +68,10 @@
             <!--ボタン-->
             <div class="col-12">
                 <div class="col text-center">
-                  <button type="button" class="btn btn-dark rounded-pill">スタンプを押す</button>
+                  <button type="submit" name="submit" class="btn btn-dark rounded-pill">スタンプを押す</button>
                 </div>
             </div>
+            </form>
         </main>
     </div>
     <footer class="fixed-bottom">
