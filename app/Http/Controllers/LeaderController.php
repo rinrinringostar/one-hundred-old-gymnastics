@@ -41,6 +41,24 @@ class LeaderController extends Controller
         return view('stampPush', compact('nickNameUsers'));
     }
 
+    public function joinStamp(Request $request, nickNameUser $id)
+    {
+        $params = $request->all();
+        $validatedData = $request->validate([
+            'joincount' => 'required',
+        ]);
+
+        $nickNameUser = nickNameUser::find($params['joincount']);
+
+        if (!isset($nickNameUser['joincount'])) {
+            foreach ($nickNameUser as $key => $value) {
+                $nickNameUser[$key]['joincount'] += 1;
+                $nickNameUser[$key]->save();
+            }
+        }
+        return redirect('/groups');
+    }
+
     /**
      * Store a newly created resource in storage.
      *

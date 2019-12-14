@@ -29,6 +29,8 @@ Route::get('/groups/stampPush', 'LeaderController@stampPush')->name('stampPush')
 Route::get('/groups/{id}/edit', 'LeaderController@edit')->name('userEdit');
 Route::post('/groups/{id}/edit', 'LeaderController@update')->name('userUpdate');
 
+Route::post('/groups/stampPush', 'LeaderController@joinStamp')->name('joinStamp');
+
 
 // 新規作成
 Route::post('groups', 'LeaderController@store')->name('store');
