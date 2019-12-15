@@ -22,7 +22,8 @@ class UserController extends Controller
     public function userStamp(Request $request, $id)
     {
         $nickNameUser = nickNameUser::find($request->id);
-        return view('stamp', compact('nickNameUser'));
+        $workCounts = $nickNameUser->joincount;
+        return view('stamp', compact('nickNameUser', 'workCounts'));
     }
 
     /**

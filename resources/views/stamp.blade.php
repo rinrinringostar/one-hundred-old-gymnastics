@@ -57,25 +57,18 @@
             </div>
             <div class="table-responsive">
                 <table class="table-bordered table-secondary" style="background-color: transparent;">
+                  @for ($i = 1; $i <= 30; $i++)
                     <tr>
-                      <th class="th_1">
-                        <span style="position: relative; top: 12px;"><img src="{{ asset('storage/はんこ.png') }}" width="80"></span>
-                        <span style="position: relative; bottom: 49px; right: 11px; font-size: 14px; color: red;">11/30</span>
-                      </th>
-                      <th class="th_1"></th>
-                      <th class="th_1"></th>
+                      {{-- @for ($i = 1; $i <= $workCounts; $i++) --}}
+                      @if ($i < 5)
+                        <th class="th_1">
+                          <span style="position: relative; top: 12px;"><img src="{{ asset('storage/はんこ.png') }}" width="80"></span>
+                          <span style="position: relative; bottom: 49px; right: 11px; font-size: 14px; color: red;">11/30</span>
+                        </th>
+                      @endif
+                      {{-- @endfor --}}
                     </tr>
-                    <tr>
-                        <th class="th_1"></th>
-                        <th class="th_1"></th>
-                        <th class="th_1"></th>
-                      </tr>
-                      <tr>
-                          <th class="th_1"></th>
-                          <th class="th_1"></th>
-                          <th class="th_1"></th>
-                        </tr>
-
+                  @endfor
                 </table>
             </div>
     </main>
