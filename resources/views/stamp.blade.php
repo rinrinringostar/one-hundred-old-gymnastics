@@ -62,7 +62,7 @@
                     @for ($j = 1; $j < 4; $j++)
                     <th class="th_1">
                       <span style="position: relative; top: 12px;"><img src="{{ asset('storage/はんこ.png') }}" width="80"></span>
-                      <span style="position: relative; bottom: 49px; right: 11px; font-size: 14px; color: red;">11/30</span>
+                      <span style="position: relative; bottom: 49px; right: 11px; font-size: 14px; color: red;">{{ $today->format('m/d') }}</span>
                     </th>
                     @endfor
                   </tr>
@@ -70,7 +70,7 @@
                     @for ($j = 1; $j < 4; $j++)
                     <td class="th_1">
                       <span style="position: relative; top: 12px;"><img src="{{ asset('storage/はんこ.png') }}" width="80"></span>
-                      <span style="position: relative; bottom: 49px; right: 11px; font-size: 14px; color: red;">11/30</span>
+                      <span style="position: relative; bottom: 49px; right: 11px; font-size: 14px; color: red; font-weight: bold;">{{ $today->format('m/d') }}</span>
                     </td>
                     @endfor
                   </tr>
