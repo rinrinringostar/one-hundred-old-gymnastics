@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\nickNameUser;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -22,7 +23,9 @@ class UserController extends Controller
     public function userStamp(Request $request, $id)
     {
         $nickNameUser = nickNameUser::find($request->id);
-        return view('stamp', compact('nickNameUser'));
+        $workCounts = $nickNameUser->joincount;
+        $today = Carbon::today();
+        return view('stamp', compact('nickNameUser', 'workCounts', 'today'));
     }
 
     /**

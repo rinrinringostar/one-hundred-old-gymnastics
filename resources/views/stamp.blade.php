@@ -13,7 +13,8 @@
 
     <style>
     /*スタンプカード*/
-    .th_1{text-align: center; width:95px; height:95px;}
+    .th_1{text-align: center; width:100%; height:95px; display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap; justify-content: center;}
+    .float-left{width: 100%;}
     </style>
 
     <title>スタンプカード</title>
@@ -55,29 +56,13 @@
                       </tbody>
                     </table>
             </div>
-            <div class="table-responsive">
-                <table class="table-bordered table-secondary" style="background-color: transparent;">
-                    <tr>
-                      <th class="th_1">
-                        <span style="position: relative; top: 12px;"><img src="{{ asset('storage/はんこ.png') }}" width="80"></span>
-                        <span style="position: relative; bottom: 49px; right: 11px; font-size: 14px; color: red;">11/30</span>
-                      </th>
-                      <th class="th_1"></th>
-                      <th class="th_1"></th>
-                    </tr>
-                    <tr>
-                        <th class="th_1"></th>
-                        <th class="th_1"></th>
-                        <th class="th_1"></th>
-                      </tr>
-                      <tr>
-                          <th class="th_1"></th>
-                          <th class="th_1"></th>
-                          <th class="th_1"></th>
-                        </tr>
-
-                </table>
-            </div>
+        </div>
+        <div class="th_1">
+          @for ($i = 0; $i < $workCounts; $i++)
+          <span style="position: relative; top: 12px; border: solid 1px black;"><img src="{{ asset('storage/はんこ.png') }}" width="80"></span>
+          <span style="position: relative; bottom: -40px; right: 72px; font-size: 14px; color: red; font-weight: bold;">{{ $today->format('m/d') }}</span>
+          @endfor
+        </div>
     </main>
     <footer class="fixed-bottom">
         <div class="container-fluid">
