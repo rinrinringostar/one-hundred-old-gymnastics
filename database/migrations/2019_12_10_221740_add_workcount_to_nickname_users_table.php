@@ -26,7 +26,7 @@ class AddWorkcountToNicknameUsersTable extends Migration
     public function down()
     {
         Schema::table('nicknameUsers', function (Blueprint $table) {
-            //
+            $table->dropColumn('joincount');
         });
     }
 }
