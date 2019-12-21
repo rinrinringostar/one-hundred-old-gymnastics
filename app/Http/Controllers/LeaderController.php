@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\JoinDay;
 use App\nickNameUser;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class LeaderController extends Controller
@@ -50,12 +52,24 @@ class LeaderController extends Controller
 
         $nickNameUser = nickNameUser::find($params['joincount']);
 
+        // $joinday = new JoinDay;
+
+        $today = Carbon::today()->format('Y/m/d');
+
+        // dd($joinday);
+
         if (!isset($nickNameUser['joincount'])) {
             foreach ($nickNameUser as $key => $value) {
                 $nickNameUser[$key]['joincount'] += 1;
+                $joinday = new JoinDay;
+                // $joinday['name'] = $nickNameUser[$key]['name'];
+                // $joinday['joinDateDay'] = $today;
+                $joinday->fill(['name' => $nickNameUser[$key]['name'], 'joinDateDay' => $today]);
+                $joinday->save();
                 $nickNameUser[$key]->save();
             }
         }
+                // dd($nickNameUser);
         return redirect('/groups');
     }
 
