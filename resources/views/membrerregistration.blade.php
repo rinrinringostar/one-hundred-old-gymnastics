@@ -13,7 +13,7 @@
 
     <style>
     th{text-align: center; }
-    button{widows: 200px; height: 30px;}
+    button{widows: 200px;}
     </style>
 
     <title>新規登録</title>

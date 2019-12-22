@@ -39,11 +39,11 @@
             <p><u>ランキング</u></p>
         </div>
         <main class="mb-5">
-            <div class="container">
-              @foreach ($nickNameUsers as $nickNameUser)
+            <div class="container" style="margin-bottom: 100px;">
+              @foreach ($nickNameUsers as $key => $nickNameUser)
                 <div class="row border py-1 text-center d-flex align-items-center" style="height: 60px;">
                   <div class="col-2"><img src="{{ asset('storage/グループアイコン.png') }}" width="50px"></div>
-                  <div class="col-3">1位</div>
+                  <div class="col-3">{{ ($key+1).'位' }}</div>
                   <div class="col-7 text-left"><a href="{{ url('users/'.$nickNameUser->id.'/stamp') }}">{{ $nickNameUser->name }}</a></div>
                 </div>
               @endforeach

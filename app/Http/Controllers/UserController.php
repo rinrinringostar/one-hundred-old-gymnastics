@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\JoinDay;
 use App\nickNameUser;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -23,9 +26,12 @@ class UserController extends Controller
     public function userStamp(Request $request, $id)
     {
         $nickNameUser = nickNameUser::find($request->id);
+        $joindays = DB::table('joinDay')->where('name', $nickNameUser->name)->get();
+        // dd($joindays);
+        // dd($nickNameUser->name);
         $workCounts = $nickNameUser->joincount;
         $today = Carbon::today();
-        return view('stamp', compact('nickNameUser', 'workCounts', 'today'));
+        return view('stamp', compact('nickNameUser', 'workCounts', 'today', 'joindays'));
     }
 
     /**

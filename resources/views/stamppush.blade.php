@@ -67,7 +67,7 @@
             </div>
             <!--ボタン-->
             <div class="col-12">
-                <div class="col text-center">
+                <div class="col text-center" style="bottom: 15px;">
                   <button type="submit" name="submit" class="btn btn-dark rounded-pill">スタンプを押す</button>
                 </div>
             </div>

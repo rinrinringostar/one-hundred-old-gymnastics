@@ -13,7 +13,7 @@
 
     <style>
     th{text-align: center; }
-    button{widows: 200px; height: 30px;}
+    button{widows: 200px;}
     </style>
 
     <title>情報変更</title>
@@ -31,7 +31,7 @@
         <main>
             <!--現在の名前-->
             <div><p>{{ $nickNameUser->name }}</p></div>
-            <div  class="border-bottom">〇〇〇</div>
+            <div  class="border-bottom">現在の名前</div>
             <!--新しい名前-->
             <form action="{{ url('groups/'.$nickNameUser->id.'/edit') }}" method="post">
               {{ csrf_field() }}
