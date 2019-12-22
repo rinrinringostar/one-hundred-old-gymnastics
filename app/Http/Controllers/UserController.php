@@ -31,7 +31,7 @@ class UserController extends Controller
         // dd($nickNameUser->name);
         $workCounts = $nickNameUser->joincount;
         $today = Carbon::today();
-        return view('stamp', compact('nickNameUser', 'workCounts', 'today'));
+        return view('stamp', compact('nickNameUser', 'workCounts', 'today', 'joindays'));
     }
 
     /**

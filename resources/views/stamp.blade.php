@@ -58,10 +58,10 @@
             </div>
         </div>
         <div class="th_1">
-          @for ($i = 0; $i < $workCounts; $i++)
-          <span style="position: relative; top: 12px; border: solid 1px black;"><img src="{{ asset('storage/はんこ.png') }}" width="80"></span>
-          <span style="position: relative; bottom: -40px; right: 72px; font-size: 14px; color: red; font-weight: bold;">{{ $today->format('m/d') }}</span>
-          @endfor
+          @foreach ($joindays as $key => $value)
+            <span style="position: relative; top: 12px; border: solid 1px black;"><img src="{{ asset('storage/はんこ.png') }}" width="80"></span>
+            <span style="position: relative; bottom: -40px; right: 72px; font-size: 14px; color: red; font-weight: bold;">{{ substr($joindays[$key]->joinDateDay, 5) }}</span>
+          @endforeach
         </div>
     </main>
     <footer class="fixed-bottom">
