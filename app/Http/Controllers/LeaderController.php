@@ -52,11 +52,7 @@ class LeaderController extends Controller
 
         $nickNameUser = nickNameUser::find($params['joincount']);
 
-        // $joinday = new JoinDay;
-
         $today = Carbon::today()->format('Y/m/d');
-
-        // dd($joinday);
 
         if (!isset($nickNameUser['joincount'])) {
             foreach ($nickNameUser as $key => $value) {
@@ -69,7 +65,6 @@ class LeaderController extends Controller
                 $nickNameUser[$key]->save();
             }
         }
-                // dd($nickNameUser);
         return redirect('/groups');
     }
 
