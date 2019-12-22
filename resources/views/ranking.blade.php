@@ -39,7 +39,7 @@
             <p><u>ランキング</u></p>
         </div>
         <main class="mb-5">
-            <div class="container">
+            <div class="container" style="margin-bottom: 100px;">
               @foreach ($nickNameUsers as $key => $nickNameUser)
                 <div class="row border py-1 text-center d-flex align-items-center" style="height: 60px;">
                   <div class="col-2"><img src="{{ asset('storage/グループアイコン.png') }}" width="50px"></div>
