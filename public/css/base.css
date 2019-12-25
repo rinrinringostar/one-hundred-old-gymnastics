@@ -4,9 +4,9 @@ header {/*background-color: lightgray; */
         background-color: #FB6D60;
         height: 3s0px;
         text-align:center;}
-footer {background-color:  #FB6D60;; 
+footer {background-color:  #FB6D60;;
         height: 60px;
         text-align:center;}
-/*フッターボタン*/ 
+/*フッターボタン*/
 .footer_btn{width: 80px; height: 30px; }
-.footer_btn_space{margin: 6px 15px 0px 15px; padding: 0px;}
+.footer_btn_space{margin: 6px 15px 0px 15px; padding: 10px 20px;}
