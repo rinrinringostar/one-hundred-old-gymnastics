@@ -22,19 +22,17 @@
   <body>
     <header class="sticky-top">
         <div>
-            <p>100歳体操スタンプカード</p>
-        </div>
-        <li>
+            <p>100歳体操スタンプカード
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                 Logout
             </a>
-
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form>
-        </li>
+            </p>
+        </div>
     </header>
     <main>
         <div class="container ">
