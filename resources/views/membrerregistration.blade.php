@@ -37,6 +37,10 @@
             <div class = " col-sm-10 ">
               <input name="name" type="text" id="text3a" class="form-control" placeholder="新しいメンバーの名前を入力" required>
             </div>
+            <label for = "text3a" class = "col-sm-2 col-form-label">グループ名</label>
+            <div class = "col-sm-10 ">
+              <input name="groupName" type="text" id="text3a" class="form-control" placeholder="参加するグループ名を入力" required>
+            </div>
           </div>
         </main>
         <div class="col-12 clearfix">
