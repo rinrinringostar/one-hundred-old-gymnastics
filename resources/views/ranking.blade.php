@@ -20,19 +20,17 @@
   <body>
     <header class="sticky-top">
         <div>
-            <p>100歳体操スタンプカード</p>
-        </div>
-        <li>
+            <p>100歳体操スタンプカード
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                 Logout
             </a>
-
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form>
-        </li>
+            </p>
+        </div>
     </header>
     <div class="container">
         <div class="text-center">
@@ -52,15 +50,10 @@
     </div>
     <footer class="fixed-bottom">
         <div class="container-fluid">
-                <div class="row align-items-start">
-                    <div class="col"> <button type="button" class="btn btn-outline-dark rounded-pill footer_btn_space">　　　　</button></div>
-                    <div class="col"> <button type="button" class="btn btn-dark rounded-pill footer_btn_space">　　　　</button></div>
-                </div>
-                <div class="row align-items-end">
-                  {{-- <div class="col"><p><font size="2"><a href="{{ route('userStamp') }}">カード</a></font></p></div> --}}
-                  <div class="col"><p><font size="2"><a href="{{ route('users') }}">ランキング</a></font></p></div>
-                </div>
-              </div>
+          <div class="row align-items-end">
+            <div class="col footer-icon"><p><font size="2"><img src="{{ asset('storage/list.png') }}" width="40" ><a href="{{ route('users') }}">ランキング</a></font></p></div>
+          </div>
+        </div>
     </footer>
 
 

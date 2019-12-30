@@ -37,6 +37,10 @@
             <div class = " col-sm-10 ">
               <input name="name" type="text" id="text3a" class="form-control" placeholder="新しいメンバーの名前を入力" required>
             </div>
+            <label for = "text3a" class = "col-sm-2 col-form-label">グループ名</label>
+            <div class = "col-sm-10 ">
+              <input name="groupName" type="text" id="text3a" class="form-control" placeholder="参加するグループ名を入力" required>
+            </div>
           </div>
         </main>
         <div class="col-12 clearfix">
@@ -49,15 +53,11 @@
     </div>
     <footer class="fixed-bottom">
         <div class="container-fluid">
-                <div class="row align-items-start">
-                  <div class="col"> <button type="button" class="btn btn-dark rounded-pill footer_btn_space">　　　　</button></div>
-                  <div class="col"> <button type="button" class="btn btn-outline-dark rounded-pill footer_btn_space">　　　　</button></div>
-                </div>
-                <div class="row align-items-end">
-                  <div class="col"><p><font size="2"><a href="{{ route('index') }}">一覧</a></font></p></div>
-                  <div class="col"><p><font size="2"><a href="{{ route('stampPush') }}">スタンプ</a></font></p></div>
-                </div>
-              </div>
+            <div class="row align-items-end footer-icon">
+                <div class="col"><p><font size="2"><img src="{{ asset('storage/list.png') }}" width="40" ><a href="{{ route('index') }}">一覧</a></font></p></div>
+                <div class="col"><p><font size="2"><img src="{{ asset('storage/判子.png') }}" width="40" ><a href="{{ route('stampPush') }}">スタンプ</a></font></p></div>
+            </div>
+        </div>
     </footer>
 
 
