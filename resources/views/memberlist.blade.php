@@ -51,11 +51,11 @@
     </div>
     <footer class="fixed-bottom">
         <div class="container-fluid">
-                <div class="row align-items-end footer-icon">
-                  <div class="col"><p><font size="2"><img src="{{ asset('storage/list.png') }}" width="40" ><a href="{{ route('index') }}">一覧</a></font></p></div>
-                  <div class="col"><p><font size="2"><img src="{{ asset('storage/判子.png') }}" width="40" ><a href="{{ route('stampPush') }}">スタンプ</a></font></p></div>
-                </div>
-              </div>
+            <div class="row align-items-end footer-icon">
+                <div class="col"><p><font size="2"><img src="{{ asset('storage/list.png') }}" width="40" ><a href="{{ route('index') }}">一覧</a></font></p></div>
+                <div class="col"><p><font size="2"><img src="{{ asset('storage/判子.png') }}" width="40" ><a href="{{ route('stampPush') }}">スタンプ</a></font></p></div>
+            </div>
+        </div>
     </footer>
 
 
