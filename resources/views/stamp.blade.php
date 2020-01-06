@@ -12,7 +12,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}">
 
     <style>
-    th{text-align: center; }
+    /*スタンプカード*/
+    .th_1{text-align: center; width:100%; height:95px; display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap; justify-content: center;}
+    .float-left{width: 100%;}
     </style>
 
     <title>スタンプカード</title>
@@ -20,87 +22,52 @@
   <body>
     <header class="sticky-top">
         <div>
-            <p>100歳体操スタンプカード</p>
-        </div>
-        <li>
+            <p>100歳体操スタンプカード
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                 Logout
             </a>
-
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form>
-        </li>
-    </header>
-    <div class="container">
-        <div class="float-right">
-                <table class="table  table-borderless">
-                    <tr>
-                        <th class="text-right">チーム名：</th>
-                        <td class="text-right">team</td>
-                    </tr>
-                    <tr>
-                        <th class="text-right">名前：</th>
-                        <td class="text-right">name</td>
-                    </tr>
-                    <rt>
-                        <th class="text-right">参加回数：</th>
-                        <td class="text-right">〇〇<span>回</span></td>
-                    </tr>
-                </table>
+            </p>
         </div>
-        <main class="mb-5">
-            <div class="table-responsive">
-            <table class="table table-bordered">
-                <tr>
-                    <th>〇</th>
-                    <th>　</th>
-                    <th>　</th>
-                    <th>　</th>
-                    <th>　</th>
-                </tr>
-                <tr>
-                    <th>　</th>
-                    <th>　</th>
-                    <th>　</th>
-                    <th>　</th>
-                    <th>　</th>
-                </tr>
-                <tr>
-                    <th>　</th>
-                    <th>　</th>
-                    <th>　</th>
-                    <th>　</th>
-                    <th>　</th>
-                </tr>
-                <tr>
-                    <th>　</th>
-                    <th>　</th>
-                    <th>　</th>
-                    <th>　</th>
-                    <th>　</th>
-                </tr>
-            </table>
+    </header>
+    <main>
+        <div class="container ">
+            <div class="float-left my-3">
+                    <table cellpadding="0" class="table-borderless">
+                      <tbody>
+                        <tr>
+                            <th class="text-right">チーム名：</th>
+                            <td class="text-left">{{ $nickNameUser->groupName }}</td>
+                        </tr>
+                        <tr>
+                            <th class="text-right">名前：</th>
+                            <td class="text-left">{{ $nickNameUser->name }}</td>
+                        </tr>
+                        <tr>
+                            <th class="text-right">参加回数：</th>
+                            <td class="text-left">{{ $nickNameUser->joincount }}<span>回</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
             </div>
-
-        </main>
-    </div>
+        </div>
+        <div class="th_1">
+          @foreach ($joindays as $key => $value)
+            <span style="position: relative; top: 12px; border: solid 1px black;"><img src="{{ asset('storage/はんこ.png') }}" width="80"></span>
+            <span style="position: relative; bottom: -40px; right: 72px; font-size: 14px; color: red; font-weight: bold;">{{ substr($joindays[$key]->joinDateDay, 5) }}</span>
+          @endforeach
+        </div>
+    </main>
     <footer class="fixed-bottom">
         <div class="container-fluid">
-                <div class="row align-items-start">
-                    <!--
-                  <div class="col"> <button type="button" class="btn btn-outline-dark rounded-pill footer_btn_space">　　　　</button></div>
-                    -->
-                  <div class="col"> <button type="button" class="btn btn-dark rounded-pill footer_btn_space">　　　　</button></div>
-                  <div class="col"> <button type="button" class="btn btn-outline-dark rounded-pill footer_btn_space" onclick="101_ranking.html">　　　　</button></div>
-                </div>
-                <div class="row align-items-end">
-                  <div class="col"><p><font size="2"><a href="{{ route('userStamp') }}">カード</a></font></p></div>
-                  <div class="col"><p><font size="2"><a href="{{ route('users') }}">ランキング</a></font></p></div>
-                </div>
-              </div>
+          <div class="row align-items-end">
+            <div class="col footer-icon"><p><font size="2"><img src="{{ asset('storage/list.png') }}" width="40" ><a href="{{ route('users') }}">ランキング</a></font></p></div>
+          </div>
+        </div>
     </footer>
 
 

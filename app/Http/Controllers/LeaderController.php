@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\JoinDay;
 use App\nickNameUser;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class LeaderController extends Controller
@@ -29,14 +31,41 @@ class LeaderController extends Controller
         return view('membrerRegistration');
     }
 
-    public function showQr()
+    public function showQr(Request $request)
     {
-        return view('qrcodeDisplay');
+        $nickNameUser = nickNameUser::find($request->id);
+        return view('qrcodeDisplay', compact('nickNameUser'));
     }
 
     public function stampPush()
     {
-        return view('stampPush');
+        $nickNameUsers = nickNameUser::all();
+        return view('stampPush', compact('nickNameUsers'));
+    }
+
+    public function joinStamp(Request $request, nickNameUser $id)
+    {
+        $params = $request->all();
+        $validatedData = $request->validate([
+            'joincount' => 'required',
+        ]);
+
+        $nickNameUser = nickNameUser::find($params['joincount']);
+
+        $today = Carbon::today()->format('Y/m/d');
+
+        if (!isset($nickNameUser['joincount'])) {
+            foreach ($nickNameUser as $key => $value) {
+                $nickNameUser[$key]['joincount'] += 1;
+                $joinday = new JoinDay;
+                // $joinday['name'] = $nickNameUser[$key]['name'];
+                // $joinday['joinDateDay'] = $today;
+                $joinday->fill(['name' => $nickNameUser[$key]['name'], 'joinDateDay' => $today]);
+                $joinday->save();
+                $nickNameUser[$key]->save();
+            }
+        }
+        return redirect('/groups');
     }
 
     /**
@@ -70,9 +99,10 @@ class LeaderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $nickNameUser = nickNameUser::find($request->id);
+        return view('memberEdit', compact('nickNameUser'));
     }
 
     /**
@@ -84,7 +114,10 @@ class LeaderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nickNameUser = nickNameUser::find($request->id);
+        $nickNameUser->fill($request->all());
+        $nickNameUser->save();
+        return redirect('/groups');
     }
 
     /**

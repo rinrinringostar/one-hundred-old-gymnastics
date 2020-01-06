@@ -27,51 +27,60 @@
         <div class="text-center">
             <p><u>スタンプ</u></p>
         </div>
-        <main class="mb-5">
-            <div class="list-group">
-                <!--アイコン＋名前＋回数＋”回”-->
-                  <a href="#" class="list-group-item list-group-item-action">☺<spam>名前</spam><span>〇〇</span><span>回</span></a>
-                  <a href="#" class="list-group-item list-group-item-action">List #2</a>
-                  <a href="#" class="list-group-item list-group-item-action">List #3</a>
-                  <a href="#" class="list-group-item list-group-item-action">List #4</a>
-                  <a href="#" class="list-group-item list-group-item-action">List #5</a>
-                  <a href="#" class="list-group-item list-group-item-action">List #6</a>
-
-                </div>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <input type="text" class="form-control" aria-label="...">
-                      <div class="input-group-text">
-                        <input type="checkbox" aria-label="...">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="input-group mb-3">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <input type="checkbox" aria-label="...">
-                        </div>
-                      </div>
-                      <input type="text" class="form-control" aria-label="...">
-                    </div>
-          </main>
-        <div class="col-12">
-            <div class="float-right">
-              <button>スタンプを押す</button>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
-        </div>
+        @endif
+
+        <main class="mb-5">
+            <!--日付入力-->
+            <div class="col-12 clearfix">
+                <div class="float-right">
+                    <h7>日付</h7>
+                    <input type="date"></input>
+                </div>
+            </div>
+            <!--行間のためのライン-->
+            <div>
+                <hr>
+            </div>
+            <!--メンバー一覧・選択-->
+            <div class="container">
+                @foreach ($nickNameUsers as $nickNameUser)
+                <form action="{{ url('/groups/stampPush') }}" method="post">
+                    {{ csrf_field() }}
+                    <div class="row border py-2 text-center d-flex align-items-center">
+                        <div class="col-2"><img src="{{ asset('storage/ブタカラー.png') }}" width="40" ></div>
+                        <div class="col-8"><a href="{{ url('groups/'.$nickNameUser->id.'/edit') }}">{{ $nickNameUser->name }}</a></div>
+                        <div class="col-2"><input type="checkbox" name="joincount[]" value="{{ $nickNameUser->id }}"></div>
+                    </div>
+                @endforeach
+            </div>
+            <!--行間のためのライン-->
+            <div>
+                <hr>
+            </div>
+            <!--ボタン-->
+            <div class="col-12">
+                <div class="col text-center" style="bottom: 15px;">
+                  <button type="submit" name="submit" class="btn btn-dark rounded-pill">スタンプを押す</button>
+                </div>
+            </div>
+            </form>
+        </main>
     </div>
     <footer class="fixed-bottom">
         <div class="container-fluid">
-                <div class="row align-items-start">
-                  <div class="col"> <button type="button" class="btn btn-outline-dark rounded-pill footer_btn_space">　　　　</button></div>
-                  <div class="col"> <button type="button" class="btn btn-dark rounded-pill footer_btn_space">　　　　</button></div>
-                </div>
-                <div class="row align-items-end">
-                  <div class="col"><p><font size="2"><a href="{{ route('index') }}">一覧</a></font></p></div>
-                  <div class="col"><p><font size="2"><a href="{{ route('stampPush') }}">スタンプ</a></font></p></div>
-                </div>
-              </div>
+            <div class="row align-items-end footer-icon">
+                <div class="col"><p><font size="2"><img src="{{ asset('storage/list.png') }}" width="40" ><a href="{{ route('index') }}">一覧</a></font></p></div>
+                <div class="col"><p><font size="2"><img src="{{ asset('storage/判子.png') }}" width="40" ><a href="{{ route('stampPush') }}">スタンプ</a></font></p></div>
+            </div>
+        </div>
     </footer>
 
 

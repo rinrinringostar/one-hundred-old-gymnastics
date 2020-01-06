@@ -19,13 +19,18 @@ Auth::routes();
 
 // UserController(ユーザー)
 Route::get('/users', 'UserController@index')->name('users');
-Route::get('/users/stamp', 'UserController@userStamp')->name('userStamp');
+Route::get('/users/{id}/stamp', 'UserController@userStamp')->name('userStamp');
 
 // LeaderController(グループユーザー。管理者)
 Route::get('/groups', 'LeaderController@index')->name('index');
 Route::get('/groups/create', 'LeaderController@create')->name('create');
-Route::get('/groups/showQr', 'LeaderController@showQr')->name('showQr');
+Route::get('/groups/{id}/showQr', 'LeaderController@showQr')->name('showQr');
 Route::get('/groups/stampPush', 'LeaderController@stampPush')->name('stampPush');
+Route::get('/groups/{id}/edit', 'LeaderController@edit')->name('userEdit');
+Route::post('/groups/{id}/edit', 'LeaderController@update')->name('userUpdate');
+
+Route::post('/groups/stampPush', 'LeaderController@joinStamp')->name('joinStamp');
+
 
 // 新規作成
 Route::post('groups', 'LeaderController@store')->name('store');

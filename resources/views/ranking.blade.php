@@ -20,46 +20,40 @@
   <body>
     <header class="sticky-top">
         <div>
-            <p>100歳体操スタンプカード</p>
-        </div>
-        <li>
+            <p>100歳体操スタンプカード
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                 Logout
             </a>
-
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form>
-        </li>
+            </p>
+        </div>
     </header>
     <div class="container">
         <div class="text-center">
             <p><u>ランキング</u></p>
         </div>
         <main class="mb-5">
-            <p>ランキングの表</p>
-            <div>
-                <ul class="list-group">
-                  @foreach ($users as $user)
-                    <li class="list-group-item">{{ $user->name }}</li>
-                  @endforeach
-                  </ul>
+            <div class="container" style="margin-bottom: 100px;">
+              @foreach ($nickNameUsers as $key => $nickNameUser)
+                <div class="row border py-1 text-center d-flex align-items-center" style="height: 60px;">
+                  <div class="col-2"><img src="{{ asset('storage/グループアイコン.png') }}" width="50px"></div>
+                  <div class="col-3">{{ ($key+1).'位' }}</div>
+                  <div class="col-7 text-left"><a href="{{ url('users/'.$nickNameUser->id.'/stamp') }}">{{ $nickNameUser->name }}</a></div>
                 </div>
+              @endforeach
+          </div>
         </main>
     </div>
     <footer class="fixed-bottom">
         <div class="container-fluid">
-                <div class="row align-items-start">
-                    <div class="col"> <button type="button" class="btn btn-outline-dark rounded-pill footer_btn_space">　　　　</button></div>
-                    <div class="col"> <button type="button" class="btn btn-dark rounded-pill footer_btn_space">　　　　</button></div>
-                </div>
-                <div class="row align-items-end">
-                  <div class="col"><p><font size="2"><a href="{{ route('userStamp') }}">カード</a></font></p></div>
-                  <div class="col"><p><font size="2"><a href="{{ route('users') }}">ランキング</a></font></p></div>
-                </div>
-              </div>
+          <div class="row align-items-end">
+            <div class="col footer-icon"><p><font size="2"><img src="{{ asset('storage/list.png') }}" width="40" ><a href="{{ route('users') }}">ランキング</a></font></p></div>
+          </div>
+        </div>
     </footer>
 
 
